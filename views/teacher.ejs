@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Teacher Page</h1>
+
+    <ul>
+      <li><a href="http://localhost:7777/addLesson">Add lesson</a></li>
+      <li><a href="http://localhost:7777/lessons">Lessons</a></li>
+      <li><a href="http://localhost:7777/students">Students</a></li>
+    </ul>
+
+    <button type="button" class="btn">Log out</button>
+
+    <script>
+      localStorage.setItem("token", "<%= token%>");
+
+      const btn = document.querySelector(".btn");
+
+      btn.addEventListener("click", () => {
+        localStorage.removeItem("token");
+        window.location = "http://localhost:7777/login";
+      });
+    </script>
+  </body>
+</html>
